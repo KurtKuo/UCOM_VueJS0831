@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title> Document </title>
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- <ul>  
+        <li v-for="item in myArray">
+          {{item}}
+        </li>
+      </ul> -->
+
+    <!-- <ul>
+        <li v-for="(item,index) in myArray">
+          {{index}} -  {{item}}
+        </li>
+      </ul> -->
+
+    <!-- <ul>
+        <li v-for="(item,index) in myArray" v-bind:id="item">
+          {{index}} -  {{item}}
+        </li>
+      </ul> -->
+
+    <!-- <ul>
+      <li v-for="(item,index) in myArray" v-bind:id="item">
+        <p>
+          {{index}} - {{item}}
+        </p>
+      </li>
+    </ul> -->
+
+    <ul>
+      <template v-for="(item,index) in myArray">
+        <li v-bind:class="item">
+          {{index}} - {{item}}
+        </li>
+        <li v-bind:class="item">
+          {{index}} - {{item}}
+        </li>
+      </template>
+    </ul>
+
+
+  </div>
+  <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          myArray: ["AA", "BB", "CC", "DD"],
+        };
+      },
+    }).mount("#app");
+  </script>
+</body>
+
+</html>
